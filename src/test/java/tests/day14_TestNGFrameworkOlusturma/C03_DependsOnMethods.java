@@ -14,6 +14,17 @@ public class C03_DependsOnMethods {
 
         baglanilan method calismaz veya calisir ama failed olursa
         baglanan method hic calismaz
+
+        @Test notasyonu sayesinde her test bagimsiz olarak calistirilabilir
+
+        Ancak bir test dependsOnMethods ile baska bir method'a baglanmis ise
+        tek basina calismasi istendiginde, once bagli oldugu test methodu'nu calistirir
+        o method calisip passed olursa asil calistirmak istedigimiz method da calisir
+
+        bu baglanti 3 veya daha fazla method arasinda olursa
+        yani calistirmak istedigimiz metho baska bir method'a ,
+        o da baska bir metho' bagli ise 3'u birden calismaz
+        "No tests were found" yazar ve hic bir test method'u calismaz
      */
 
     @Test(dependsOnMethods = "wiseTesti")
@@ -25,7 +36,6 @@ public class C03_DependsOnMethods {
     @Test(priority = 3)
     public void wiseTesti(){
         System.out.println("Wise Quarter");
-        Assert.assertTrue(8==3); // failed
     }
 
     @Test(dependsOnMethods = "youtubeTesti")
