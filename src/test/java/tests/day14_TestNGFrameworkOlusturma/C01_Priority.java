@@ -20,12 +20,12 @@ public class C01_Priority {
         System.out.println("Youtube");
     }
 
-    @Test(priority = -3)
+    @Test(groups = "minireg1")
     public void wiseTesti(){
         System.out.println("Wise Quarter");
     }
 
-    @Test(priority = 57)
+    @Test(groups = {"smoke", "minireg1"})
     public void amazonTesti(){ // priority yazilmazsa 0 degeri alir
         System.out.println("Amazon");
     }
